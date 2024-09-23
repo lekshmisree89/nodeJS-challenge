@@ -3,7 +3,7 @@
 
 function renderLicenseBadge(license) {
   if (license === 'None') {
-    return ''; // Return an empty string if no license is selected
+    return ''; // Return an empty string if no license is selected;
   }
   return `![License](https://img.shields.io/badge/license-${license.replace})`;
 }
