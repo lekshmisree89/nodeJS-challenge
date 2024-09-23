@@ -1,9 +1,11 @@
 //DEPENDENCIES
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from './utils/generateMarkdown.js';
 
 
-inquirer.prompt([
+
+const questions =[
   {
     type: 'input',
     name: 'title',
@@ -50,52 +52,19 @@ inquirer.prompt([
     name: 'email',
     message: 'Enter your email address:'
   }
-])
-.then(answers => {
-  // Use the answers to create a README template
-  const readmeContent = generateReadme(answers);
-  
-  // Write the content to a README.md file
-  fs.writeFile('README.md', readmeContent, (err) =>
-    err ? console.log(err) : console.log('Successfully created README.md!')
-  );
-});
+]
 
+    fs.writeFile('README.md', data, (err) => {
+      if (err) throw err;
+      console.log('README.md has been generated!');
+    });
+  
 
-//generate readme content
-function generateReadme(answers) {
-    return `
-  # ${answers.title}
-  
-  ## Description
-  ${answers.description}
-  
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  
-  ## Installation
-  ${answers.installation}
-  
-  ## Usage
-  ${answers.usage}
-  
-  ## License
-  This project is licensed under the ${answers.license} license.
-  
-  ## Contributing
-  ${answers.contributing}
-  
-  ## Tests
-  ${answers.tests}
-  
-  ## Questions
-  If you have any questions, you can reach me at ${answers.email}.
-  Visit my [GitHub profile](https://github.com/${answers.github}) for more projects.
-    `;
+  function init() {
+    inquirer.prompt(questions).then((answers) => {
+      const markdownContent = generateMarkdown(answers);
+      writeToFile('README.md', markdownContent);
+    });
   }
   
+  init();
