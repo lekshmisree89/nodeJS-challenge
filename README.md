@@ -37,11 +37,6 @@ Interactive Command-Line Interface: Collects input from the user through a serie
 Dynamic README Generation: Generates a structured README file with all the necessary sections based on user input.
 License Badge: Automatically adds a license badge based on the selected license.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
-
-
-
 
 If you have any questions about the project, please feel free to contact me:
 
