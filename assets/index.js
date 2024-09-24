@@ -32,16 +32,8 @@ const questions =[
     message: 'Choose a license for your project:',
     choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'None']
   },
-  {
-    type: 'input',
-    name: 'contributing',
-    message: 'Provide contribution guidelines:'
-  },
-  {
-    type: 'input',
-    name: 'tests',
-    message: 'Provide test instructions:'
-  },
+  
+  
   {
     type: 'input',
     name: 'github',

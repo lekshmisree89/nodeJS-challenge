@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
   if (license === 'None') {
     return ''; // Return an empty string if no license is selected;
   }
-  return `![License](https://img.shields.io/badge/license-${license.replace})`;
+  return `![License](https://img.shields.io/badge/license)`;
 }
 
 // TODO: Create a function that returns the license link
@@ -36,9 +36,9 @@ function renderLicenseSection(license) {
     return ''; // Return an empty string if no license is selected
   }
   return `
-## License
+
 This project is licensed under the ${license} license. 
-For more information, visit(${renderLicenseLink(license)}).
+visit(${renderLicenseLink(license)}).
 `;
 }
 
@@ -55,9 +55,8 @@ ${data.description}
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
+
+
 
 ## Installation
 ${data.installation}
@@ -65,13 +64,12 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
+
 ${renderLicenseSection(data.license)}
 
-## Contributing
-${data.contributing}
 
-## Tests
-${data.tests}
+
+
 
 ## Questions
 If you have any questions, you can reach me at ${data.email}.
